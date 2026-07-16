@@ -1,0 +1,121 @@
+<?= $this->extend('layout') ?>
+
+<?= $this->section('content') ?>
+
+<footer class="text-center py-3">
+    <p class="mb-1">
+        <strong>Web Security Incident Simulator</strong>
+    </p>
+
+    <small class="text-muted">
+        © <?= date('Y') ?> Developed by
+        <strong>Wahyu Eko Suroso</strong> (411222044)
+    </small>
+
+    <br>
+
+    <small class="text-muted">
+        Teknik Informatika - Universitas Dian Nusantara
+    </small>
+</footer>
+
+<h5 class="mb-4">
+    Selamat Datang,
+    <strong><?= session()->get('username'); ?></strong>
+</h5>
+
+<div class="row">
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>Server</h5>
+                <h2>🟢</h2>
+                <p>Running</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>Database</h5>
+                <h2>🟢</h2>
+                <p>Connected</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>Firewall</h5>
+                <h2>🟢</h2>
+                <p>Active</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>Attack Today</h5>
+                <h2><?= $totalLogs ?></h2>
+                <p>Detected</p>
+            </div>
+        </div>
+    </div>
+
+    <h5>Total Attack</h5>
+    <h2><?= $totalLogs ?></h2>
+
+    <h5>Critical Incident</h5>
+    <h2><?= $critical ?></h2>
+
+</div>
+
+<hr>
+
+<h4 class="mb-3">Pilih Simulasi</h4>
+
+<div class="row">
+
+    <div class="col-md-4 mb-3">
+        <a href="<?= base_url('sql') ?>" class="btn btn-danger w-100 p-4">
+            💉 SQL Injection
+        </a>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <a href="<?= base_url('bola') ?>" class="btn btn-warning w-100 p-4">
+            🔓 BOLA
+        </a>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <a href="<?= base_url('ransomware') ?>" class="btn btn-dark w-100 p-4">
+            🔒 Ransomware
+        </a>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <a href="<?= base_url('backup') ?>" class="btn btn-success w-100 p-4">
+            💾 Backup & Recovery
+        </a>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <a href="<?= base_url('logs') ?>" class="btn btn-info w-100 p-4">
+            📄 Attack Logs
+        </a>
+    </div>
+
+      <div class="col-md-1 mb-3">
+        <a href="<?= base_url('logout') ?>" class="btn btn-danger w-100 p-2">
+            Logout
+        </a>
+    </div>
+
+</div>
+
+<?= $this->endSection() ?>
